@@ -56,7 +56,7 @@ Attributes
     <td><tt>['data-bag-merge']['nodes']['data_bag_name']</tt></td>
     <td>String</td>
     <td>Name of the data bag to fetch node data from</td>
-    <td><tt>environments</tt></td>
+    <td><tt>nodes</tt></td>
   </tr>
   <tr>
     <td><tt>['data-bag-merge']['nodes']['encrypted']</tt></td>
@@ -125,9 +125,6 @@ end
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write your change
