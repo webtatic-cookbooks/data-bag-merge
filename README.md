@@ -84,7 +84,7 @@ of the run-list and define the node's environment
   "name":"my_node",
   "environment": "production",
   "run_list": [
-    "recipe[data-bag-merge]"
+    "recipe[data-bag-merge::environment]"
   ]
 }
 ```
@@ -102,7 +102,7 @@ run-list and define the node's environment
   "name":"my_node",
   "environment": "production",
   "run_list": [
-    "recipe[data-bag-merge]"
+    "recipe[data-bag-merge::node]"
   ]
 }
 ```
