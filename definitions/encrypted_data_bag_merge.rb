@@ -22,5 +22,5 @@ define :encrypted_data_bag_merge do
   data_bag_data = Chef::EncryptedDataBagItem.load(params[:data_bag], params[:item], databag_secret).to_hash
   data_bag_data.delete 'id'
 
-  Chef::Mixin::DeepMerge.deep_merge! data_bag_data, node.set
+  Chef::Mixin::DeepMerge.deep_merge! data_bag_data, node.default
 end
