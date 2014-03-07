@@ -7,14 +7,14 @@
 # Licensed under the MIT license
 
 if node['data-bag-merge']['environments']['encrypted']
-  encrypted_data_bag_merge "environments/#{node.chef_environment}" do
-    secret_path node['data-bag-merge['environments']['secret_path']
-    data_bag node['data-bag-merge']['environments']['data_bag_name']
-    item node.node
+  encrypted_data_bag_merge "environments/#{node.name}" do
+    secret_path node['data-bag-merge']['nodes']['secret_path']
+    data_bag node['data-bag-merge']['nodes']['data_bag_name']
+    item node.name
   end
 else
-  data_bag_merge "environments/#{node.chef_environment}" do
-    data_bag node['data-bag-merge']['environments_data_bag_name']
-    item node.node
+  data_bag_merge "environments/#{node.name}" do
+    data_bag node['data-bag-merge']['nodes']['data_bag_name']
+    item node.name
   end
 end

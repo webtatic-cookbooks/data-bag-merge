@@ -14,7 +14,7 @@ if node['data-bag-merge']['environments']['encrypted']
   end
 else
   data_bag_merge "environments/#{node.chef_environment}" do
-    data_bag node['data-bag-merge']['environments_data_bag_name']
+    data_bag node['data-bag-merge']['environments']['data_bag_name']
     item node.chef_environment
   end
 end
