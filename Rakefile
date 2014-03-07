@@ -17,7 +17,7 @@ end
 task :lint do
   prepare_foodcritic_sandbox(sandbox_path)
 
-  sh "bundle exec knife cookbook test #{cookbook_name} -o #{sandbox_path}/../"
+  sh "bundle exec knife cookbook test #{cookbook_name} -o #{sandbox_path}/../ --config #{File.dirname(__FILE__)}/test/lint/knife.rb"
 end
 
 task :test => ['lint', 'foodcritic']
