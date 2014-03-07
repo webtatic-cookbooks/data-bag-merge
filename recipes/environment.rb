@@ -6,15 +6,17 @@
 #
 # Licensed under the MIT license
 
+item_name = node.chef_environment.gsub(/[^\-[:alnum:]]+/, '_')
+
 if node['data-bag-merge']['environments']['encrypted']
-  encrypted_data_bag_merge "environments/#{node.chef_environment}" do
+  encrypted_data_bag_merge "environments/#{item_name}" do
     secret_path node['data-bag-merge']['environments']['secret_path']
     data_bag node['data-bag-merge']['environments']['data_bag_name']
-    item node.chef_environment
+    item item_name
   end
 else
-  data_bag_merge "environments/#{node.chef_environment}" do
+  data_bag_merge "environments/#{item_name}" do
     data_bag node['data-bag-merge']['environments']['data_bag_name']
-    item node.chef_environment
+    item item_name
   end
 end
