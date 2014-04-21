@@ -150,5 +150,5 @@
     "environment": "Merge an environments databag based on chef environment",
     "node": "Merge a nodes databag based on chef node name"
   },
-  "version": "0.1.2"
+  "version": "0.1.3"
 }
