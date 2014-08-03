@@ -37,6 +37,12 @@ Attributes
     <td><tt>true</tt></td>
   </tr>
   <tr>
+    <td><tt>['data-bag-merge']['environments']['format']</tt></td>
+    <td>String</td>
+    <td>Option to change style of attributes (default/override/default_override)',</td>
+    <td><tt>default</tt></td>
+  </tr>
+  <tr>
     <td><tt>['data-bag-merge']['environments']['secret_path']</tt></td>
     <td>String</td>
     <td>Optional path to the secret file that decrypts the encrypted data bag, nil will use the path supplied in the chef config</td>
@@ -63,6 +69,12 @@ Attributes
     <td>String</td>
     <td>Flag to determine whether to try to access as an encrypted data bag</td>
     <td><tt>true</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['data-bag-merge']['nodes']['format']</tt></td>
+    <td>String</td>
+    <td>Option to change style of attributes (default/override/default_override)',</td>
+    <td><tt>default</tt></td>
   </tr>
   <tr>
     <td><tt>['data-bag-merge']['nodes']['secret_path']</tt></td>

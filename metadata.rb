@@ -28,6 +28,11 @@ attribute 'data-bag-merge/environments/encrypted',
   :description => 'Flag to determine whether to try to access as an encrypted data bag',
   :default => 'true'
 
+attribute 'data-bag-merge/environments/format',
+  :display_name => 'Environments data bag format',
+  :description => 'Option to change style of attributes (default/override/default_override)',
+  :default => 'default'
+
 attribute 'data-bag-merge/environments/secret_path',
   :display_name => 'Environments secret path',
   :description => 'Optional path to the secret file that decrypts the encrypted data bag, nil will use the path supplied in the chef config',
@@ -47,6 +52,11 @@ attribute 'data-bag-merge/nodes/encrypted',
   :display_name => 'Nodes encrypted flag',
   :description => 'Flag to determine whether to try to access as an encrypted data bag',
   :default => 'true'
+
+attribute 'data-bag-merge/nodes/format',
+  :display_name => 'Nodes data bag format',
+  :description => 'Option to change style of attributes (default/override/default_override)',
+  :default => 'default'
 
 attribute 'data-bag-merge/nodes/secret_path',
   :display_name => 'Nodes secret path',

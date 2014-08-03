@@ -1,3 +1,6 @@
+## v0.1.3
+* Add ability to change the format of the attributes to merge in
+
 ## v0.1.2
 * Fix issue with attribute names and data bag item keys
 * Convert environment and node names to use only supported characters
