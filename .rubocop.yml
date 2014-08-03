@@ -8,6 +8,9 @@ AlignParameters:
 Encoding:
   Enabled: false
 
+IfUnlessModifier:
+  Enabled: false
+
 LineLength:
   Max: 200
 
