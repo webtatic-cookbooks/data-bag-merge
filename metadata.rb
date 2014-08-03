@@ -4,7 +4,7 @@ maintainer_email 'andy@webtatic.com'
 license          'MIT'
 description      'Installs/Configures data-bag-merge'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.1.3'
+version          '0.1.4'
 recipe           'environment', 'Merge an environments databag based on chef environment'
 recipe           'node', 'Merge a nodes databag based on chef node name'
 
