@@ -21,16 +21,3 @@ desc 'Run all style checks'
 task :style => ['style:chef', 'style:ruby']
 
 task :test => ['style']
-
-task :package do
-  system "tar", "-zcvf", "data-bag-merge.tgz",
-    "-s", "#^\.#data-bag-merge#",
-    "--include", ".",
-    "--include", "./attributes",
-    "--include", "./definitions",
-    "--include", "./recipes",
-    "--include", "./*.md",
-    "--include", "./LICENSE",
-    "--include", "./metadata.*",
-    "./"
-end
