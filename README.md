@@ -40,7 +40,7 @@ Attributes
     <td><tt>['data-bag-merge']['environments']['format']</tt></td>
     <td>String</td>
     <td>Option to change style of attributes (default/override/default_override)',</td>
-    <td><tt>default</tt></td>
+    <td><tt>default_override</tt></td>
   </tr>
   <tr>
     <td><tt>['data-bag-merge']['environments']['secret_path']</tt></td>
@@ -74,7 +74,7 @@ Attributes
     <td><tt>['data-bag-merge']['nodes']['format']</tt></td>
     <td>String</td>
     <td>Option to change style of attributes (default/override/default_override)',</td>
-    <td><tt>default</tt></td>
+    <td><tt>default_override</tt></td>
   </tr>
   <tr>
     <td><tt>['data-bag-merge']['nodes']['secret_path']</tt></td>
@@ -91,13 +91,42 @@ Usage
 Include `data-bag-merge::environment` in your node's `run_list` at the very top
 of the run-list and define the node's environment
 
+Node
+
 ```json
 {
   "name":"my_node",
   "environment": "production",
   "run_list": [
     "recipe[data-bag-merge::environment]"
-  ]
+  ],
+  "item_with_normal": "normal value",
+  "item_with_override": "normal value"
+}
+```
+
+Encrypted Data Bag `environments/production`
+
+```json
+{
+  "id": "production",
+  "default_attributes": {
+    "item_with_default": "default value",
+    "item_with_normal": "default value"
+  },
+  "override_attributes": {
+    "item_with_override": "override value"
+  }
+}
+```
+
+Result
+
+```json
+{
+  "item_with_default": "default value",
+  "item_with_normal": "normal value",
+  "item_with_override": "override value"
 }
 ```
 
@@ -109,13 +138,42 @@ the node's defaults.
 Include `data-bag-merge::node` in your node's `run_list` at the very top of the
 run-list and define the node's environment
 
+Node
+
 ```json
 {
   "name":"my_node",
   "environment": "production",
   "run_list": [
     "recipe[data-bag-merge::node]"
-  ]
+  ],
+  "item_with_normal": "normal value",
+  "item_with_override": "normal value"
+}
+```
+
+Encrypted Data Bag `nodes/my_node`
+
+```json
+{
+  "id": "production",
+  "default_attributes": {
+    "item_with_default": "default value",
+    "item_with_normal": "default value"
+  },
+  "override_attributes": {
+    "item_with_override": "override value"
+  }
+}
+```
+
+Result
+
+```json
+{
+  "item_with_default": "default value",
+  "item_with_normal": "normal value",
+  "item_with_override": "override value"
 }
 ```
 

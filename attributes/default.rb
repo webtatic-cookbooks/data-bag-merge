@@ -9,9 +9,9 @@
 default['data-bag-merge']['environments']['data_bag_name'] = 'environments'
 default['data-bag-merge']['environments']['encrypted'] = true
 default['data-bag-merge']['environments']['secret_path'] = nil
-default['data-bag-merge']['environments']['format'] = 'default'
+default['data-bag-merge']['environments']['format'] = 'default_override'
 
 default['data-bag-merge']['nodes']['data_bag_name'] = 'nodes'
 default['data-bag-merge']['nodes']['encrypted'] = true
 default['data-bag-merge']['nodes']['secret_path'] = nil
-default['data-bag-merge']['nodes']['format'] = 'default'
+default['data-bag-merge']['nodes']['format'] = 'default_override'
