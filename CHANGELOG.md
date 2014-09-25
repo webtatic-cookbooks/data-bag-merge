@@ -1,5 +1,6 @@
 ## v0.2.0
 * Change environment/node recipes to use default_override format by default
+* Add fatal error if default_override format includes unexpected keys
 
 ## v0.1.4
 * Add ability to change the format of the attributes to merge in

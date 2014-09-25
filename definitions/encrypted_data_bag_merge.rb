@@ -28,6 +28,12 @@ define :encrypted_data_bag_merge, :format => 'default' do
   when 'override'
     Chef::Mixin::DeepMerge.deep_merge! data_bag_data, node.override
   when 'default_override'
+    unexpected_keys = data_bag_data.keys - %w( default_attributes override_attributes )
+    if unexpected_keys.count > 0
+      Chef::Application.fatal! "Unexpected keys #{unexpected_keys.join(',')}" +
+        " found in #{params[:data_bag]}/#{params[:item]} data bag"
+    end
+
     if data_bag_data.key?('default_attributes')
       Chef::Mixin::DeepMerge.deep_merge! data_bag_data['default_attributes'], node.default
     end
