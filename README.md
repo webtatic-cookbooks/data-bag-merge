@@ -37,7 +37,7 @@ Attributes
     <td><tt>true</tt></td>
   </tr>
   <tr>
-    <td><tt>['data-bag-merge']['environments']['format']</tt></td>
+    <td><tt>['data-bag-merge']['environments']['bag_format']</tt></td>
     <td>String</td>
     <td>Option to change style of attributes (default/override/default_override)',</td>
     <td><tt>default_override</tt></td>
@@ -71,7 +71,7 @@ Attributes
     <td><tt>true</tt></td>
   </tr>
   <tr>
-    <td><tt>['data-bag-merge']['nodes']['format']</tt></td>
+    <td><tt>['data-bag-merge']['nodes']['bag_format']</tt></td>
     <td>String</td>
     <td>Option to change style of attributes (default/override/default_override)',</td>
     <td><tt>default_override</tt></td>
@@ -187,9 +187,44 @@ Chef definitions are provided for additionally providing custom data bag merges
 e.g.
 
 ```
+data_bag_merge "my-custom-bag/my-bag-item"
+```
+
+```
+encrypted_data_bag_merge "my-custom-bag/my-bag-item"
+```
+
+The following additional attributes are supported:
+
+```
+data_bag_merge "custom" do
+  data_bag "my-custom-bag"        # The data bag to get the data from
+  item 'my-bag-item'              # The data bag item to get the data from
+  bag_format 'default'            # The format of the data
+                                  # 'default' - merge all keys into node.default
+                                  # 'override' - merge all keys into node.override
+                                  # 'default_override' 
+                                  #   - merge all keys in 'default_attributes'
+                                  #     into node.default
+                                  #   - merge all keys in 'override_attributes'
+                                  #     into node.override
+end
+```
+
+```
 encrypted_data_bag_merge "custom" do
-  data_bag "my-custom-bag"
-  item 'my-bag-item'
+  data_bag "my-custom-bag"        # The data bag to get the data from
+  item 'my-bag-item'              # The data bag item to get the data from
+  secret_path nil                 # The path to the secret key.
+                                  # nil - default chef encrypted_data_bag_key setting
+  bag_format 'default'            # The format of the data
+                                  # 'default' - merge all keys into node.default
+                                  # 'override' - merge all keys into node.override
+                                  # 'default_override' 
+                                  #   - merge all keys in 'default_attributes'
+                                  #     into node.default
+                                  #   - merge all keys in 'override_attributes'
+                                  #     into node.override
 end
 ```
 

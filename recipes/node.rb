@@ -11,14 +11,14 @@ config = node['data-bag-merge']['nodes']
 
 if config['encrypted']
   encrypted_data_bag_merge "#{config['data_bag_name']}/#{item_name}" do
-    format config['format']
+    bag_format config['format']
     secret_path config['secret_path']
     data_bag config['data_bag_name']
     item item_name
   end
 else
   data_bag_merge "#{config['data_bag_name']}/#{item_name}" do
-    format config['format']
+    bag_format config['format']
     data_bag config['data_bag_name']
     item item_name
   end

@@ -6,7 +6,7 @@
 #
 # Licensed under the MIT license
 
-define :encrypted_data_bag_merge, :format => 'default' do
+define :encrypted_data_bag_merge, :bag_format => 'default' do
   if params[:secret_path].nil?
     databag_secret = nil
   else
@@ -19,10 +19,10 @@ define :encrypted_data_bag_merge, :format => 'default' do
     params[:item] = bag_item_name[1]
   end
 
-  data_bag_data = Chef::EncryptedDataBagItem.load(params[:data_bag], params[:item], databag_secret).to_hash
+  data_bag_data = Chef::EncryptedDataBagItem.load(params[:data_bag], params[:item], databag_secret).raw_data
   data_bag_data.delete 'id'
 
-  case params[:format]
+  case params[:bag_format]
   when 'default'
     Chef::Mixin::DeepMerge.deep_merge! data_bag_data, node.default
   when 'override'

@@ -4,7 +4,7 @@ maintainer_email 'andy@webtatic.com'
 license          'MIT'
 description      'Installs/Configures data-bag-merge'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.2.0'
+version          '0.2.1'
 recipe           'environment', 'Merge an environments databag based on chef environment'
 recipe           'node', 'Merge a nodes databag based on chef node name'
 
@@ -28,7 +28,7 @@ attribute 'data-bag-merge/environments/encrypted',
   :description => 'Flag to determine whether to try to access as an encrypted data bag',
   :default => 'true'
 
-attribute 'data-bag-merge/environments/format',
+attribute 'data-bag-merge/environments/bag_format',
   :display_name => 'Environments data bag format',
   :description => 'Option to change style of attributes (default/override/default_override)',
   :default => 'default'
@@ -53,7 +53,7 @@ attribute 'data-bag-merge/nodes/encrypted',
   :description => 'Flag to determine whether to try to access as an encrypted data bag',
   :default => 'true'
 
-attribute 'data-bag-merge/nodes/format',
+attribute 'data-bag-merge/nodes/bag_format',
   :display_name => 'Nodes data bag format',
   :description => 'Option to change style of attributes (default/override/default_override)',
   :default => 'default'

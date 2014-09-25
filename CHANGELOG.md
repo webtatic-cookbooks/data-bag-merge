@@ -1,3 +1,6 @@
+## v0.2.1
+* Change format to bag_format to not conflict with reserved definition attribute
+
 ## v0.2.0
 * Change environment/node recipes to use default_override format by default
 * Add fatal error if default_override format includes unexpected keys
