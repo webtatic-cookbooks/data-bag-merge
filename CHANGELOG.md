@@ -1,3 +1,6 @@
+## v0.2.2
+* Fix encrypted_data_bag_merge chef object inconsistency
+
 ## v0.2.1
 * Change format to bag_format to not conflict with reserved definition attribute
 

@@ -19,7 +19,7 @@ define :encrypted_data_bag_merge, :bag_format => 'default' do
     params[:item] = bag_item_name[1]
   end
 
-  data_bag_data = Chef::EncryptedDataBagItem.load(params[:data_bag], params[:item], databag_secret).raw_data
+  data_bag_data = Chef::EncryptedDataBagItem.load(params[:data_bag], params[:item], databag_secret).to_hash
   data_bag_data.delete 'id'
 
   case params[:bag_format]
