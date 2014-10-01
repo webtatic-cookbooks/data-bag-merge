@@ -1,3 +1,6 @@
+## v0.2.3
+* Use bag_format for node's config key
+
 ## v0.2.2
 * Fix encrypted_data_bag_merge chef object inconsistency
 
