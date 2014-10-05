@@ -24,8 +24,8 @@ define :data_bag_merge, :bag_format => 'default' do
   when 'default_override'
     unexpected_keys = data_bag_data.keys - %w( default_attributes override_attributes )
     if unexpected_keys.count > 0
-      Chef::Application.fatal! "Unexpected keys #{unexpected_keys.join(',')}" +
-        " found in #{params[:data_bag]}/#{params[:item]} data bag"
+      Chef::Application.fatal! "Unexpected keys #{unexpected_keys.join(',')} \
+found in #{params[:data_bag]}/#{params[:item]} data bag"
     end
 
     if data_bag_data.key?('default_attributes')
