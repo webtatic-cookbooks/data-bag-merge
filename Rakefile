@@ -1,5 +1,5 @@
 #!/usr/bin/env rake
-
+require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 require 'foodcritic'
 
@@ -20,4 +20,8 @@ end
 desc 'Run all style checks'
 task :style => ['style:chef', 'style:ruby']
 
-task :test => ['style']
+# Rspec and ChefSpec
+desc 'Run ChefSpec examples'
+RSpec::Core::RakeTask.new(:spec)
+
+task :test => %w( style spec )

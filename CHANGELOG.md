@@ -1,3 +1,6 @@
+## (unreleased)
+* Add integration tests for environment/node recipes
+
 ## v0.2.3
 * Use bag_format for node's config key
 
