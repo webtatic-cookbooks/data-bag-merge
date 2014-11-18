@@ -205,7 +205,7 @@ data_bag_merge "custom" do
                                   # 'override' - merge all keys into node.override
                                   # 'default_override' 
                                   #   - merge all keys in 'default_attributes'
-                                  #     into node.default
+                                  #     into node.default
                                   #   - merge all keys in 'override_attributes'
                                   #     into node.override
 end
@@ -222,7 +222,7 @@ encrypted_data_bag_merge "custom" do
                                   # 'override' - merge all keys into node.override
                                   # 'default_override' 
                                   #   - merge all keys in 'default_attributes'
-                                  #     into node.default
+                                  #     into node.default
                                   #   - merge all keys in 'override_attributes'
                                   #     into node.override
 end
