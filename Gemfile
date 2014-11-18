@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 group :test do
-  gem 'chefspec', '~> 4.0.2'
-  gem 'rubocop', '~> 0.26.1'
+  gem 'berkshelf', '~> 3.2.1'
+  gem 'chefspec', '~> 4.1.1'
+  gem 'rubocop', '~> 0.27.1'
   gem 'foodcritic', '~> 4.0.0'
-  gem 'rake', '~> 10.1'
+  gem 'rake', '~> 10.3'
 end
