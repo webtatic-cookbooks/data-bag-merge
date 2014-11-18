@@ -1,5 +1,7 @@
-## (unreleased)
+## v0.2.4
+* Fix README which contained \xC2 which was causing issues with berkshelf.
 * Add integration tests for environment/node recipes
+* Update test dependencies to latest releases
 
 ## v0.2.3
 * Use bag_format for node's config key
