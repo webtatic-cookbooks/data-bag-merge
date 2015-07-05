@@ -6,7 +6,7 @@
 #
 # Licensed under the MIT license
 
-define :encrypted_data_bag_merge, :bag_format => 'default' do
+define :encrypted_data_bag_merge, bag_format: 'default' do
   if params[:secret_path].nil?
     databag_secret = nil
   else

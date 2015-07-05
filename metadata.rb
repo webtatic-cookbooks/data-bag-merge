@@ -9,56 +9,56 @@ recipe           'environment', 'Merge an environments databag based on chef env
 recipe           'node', 'Merge a nodes databag based on chef node name'
 
 attribute 'data-bag-merge',
-  :display_name => 'data-bag-merge Hash',
-  :description => 'Hash of data-bag-merge attributes',
-  :type => 'hash'
+  display_name: 'data-bag-merge Hash',
+  description: 'Hash of data-bag-merge attributes',
+  type: 'hash'
 
 attribute 'data-bag-merge/environments',
-  :display_name => 'environments Hash',
-  :description => 'Hash of environment recipe attributes',
-  :type => 'hash'
+  display_name: 'environments Hash',
+  description: 'Hash of environment recipe attributes',
+  type: 'hash'
 
 attribute 'data-bag-merge/environments/data_bag_name',
-  :display_name => 'Environments data bag name',
-  :description => 'Name of the data bag to fetch environment data from',
-  :default => 'environments'
+  display_name: 'Environments data bag name',
+  description: 'Name of the data bag to fetch environment data from',
+  default: 'environments'
 
 attribute 'data-bag-merge/environments/encrypted',
-  :display_name => 'Environments encrypted flag',
-  :description => 'Flag to determine whether to try to access as an encrypted data bag',
-  :default => 'true'
+  display_name: 'Environments encrypted flag',
+  description: 'Flag to determine whether to try to access as an encrypted data bag',
+  default: 'true'
 
 attribute 'data-bag-merge/environments/bag_format',
-  :display_name => 'Environments data bag format',
-  :description => 'Option to change style of attributes (default/override/default_override)',
-  :default => 'default'
+  display_name: 'Environments data bag format',
+  description: 'Option to change style of attributes (default/override/default_override)',
+  default: 'default'
 
 attribute 'data-bag-merge/environments/secret_path',
-  :display_name => 'Environments secret path',
-  :description => 'Optional path to the secret file that decrypts the encrypted data bag, nil will use the path supplied in the chef config',
-  :default => 'nil'
+  display_name: 'Environments secret path',
+  description: 'Optional path to the secret file that decrypts the encrypted data bag, nil will use the path supplied in the chef config',
+  default: 'nil'
 
 attribute 'data-bag-merge/nodes',
-  :display_name => 'nodes Hash',
-  :description => 'Hash of nodes recipe attributes',
-  :type => 'hash'
+  display_name: 'nodes Hash',
+  description: 'Hash of nodes recipe attributes',
+  type: 'hash'
 
 attribute 'data-bag-merge/nodes/data_bag_name',
-  :display_name => 'Nodes data bag name',
-  :description => 'Name of the data bag to fetch node data from',
-  :default => 'environments'
+  display_name: 'Nodes data bag name',
+  description: 'Name of the data bag to fetch node data from',
+  default: 'environments'
 
 attribute 'data-bag-merge/nodes/encrypted',
-  :display_name => 'Nodes encrypted flag',
-  :description => 'Flag to determine whether to try to access as an encrypted data bag',
-  :default => 'true'
+  display_name: 'Nodes encrypted flag',
+  description: 'Flag to determine whether to try to access as an encrypted data bag',
+  default: 'true'
 
 attribute 'data-bag-merge/nodes/bag_format',
-  :display_name => 'Nodes data bag format',
-  :description => 'Option to change style of attributes (default/override/default_override)',
-  :default => 'default'
+  display_name: 'Nodes data bag format',
+  description: 'Option to change style of attributes (default/override/default_override)',
+  default: 'default'
 
 attribute 'data-bag-merge/nodes/secret_path',
-  :display_name => 'Nodes secret path',
-  :description => 'Optional path to the secret file that decrypts the encrypted data bag',
-  :default => 'nil'
+  display_name: 'Nodes secret path',
+  description: 'Optional path to the secret file that decrypts the encrypted data bag',
+  default: 'nil'

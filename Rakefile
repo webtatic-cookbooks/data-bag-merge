@@ -18,10 +18,10 @@ namespace :style do
 end
 
 desc 'Run all style checks'
-task :style => ['style:chef', 'style:ruby']
+task style: ['style:chef', 'style:ruby']
 
 # Rspec and ChefSpec
 desc 'Run ChefSpec examples'
 RSpec::Core::RakeTask.new(:spec)
 
-task :test => %w( style spec )
+task test: %w( style spec )

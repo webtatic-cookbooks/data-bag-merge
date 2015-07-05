@@ -6,7 +6,7 @@
 #
 # Licensed under the MIT license
 
-define :data_bag_merge, :bag_format => 'default' do
+define :data_bag_merge, bag_format: 'default' do
   if params[:data_bag].nil?
     bag_item_name = params[:name].split('/')
     params[:data_bag] = bag_item_name[0]
