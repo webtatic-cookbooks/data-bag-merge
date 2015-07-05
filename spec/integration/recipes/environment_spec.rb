@@ -2,10 +2,9 @@ require 'spec_helper'
 
 describe 'data-bag-merge::environment' do
   context 'with chef_environment "staging" and unencrypted data_bag item "environments/staging"' do
-
     let(:chef_run) do
       ChefSpec::ServerRunner.new do |node, runner|
-        runner.create_data_bag('environments',
+        runner.create_data_bag 'environments',
           'staging' => {
             'id' => 'staging',
             'default_attributes' => {
@@ -16,8 +15,7 @@ describe 'data-bag-merge::environment' do
               'item_with_override' => 'override value'
             }
           }
-        )
-        runner.create_environment('staging', {})
+        runner.create_environment 'staging', {}
 
         node.set['data-bag-merge']['environments']['encrypted'] = false
         node.set['item_with_normal'] = 'normal value'
@@ -31,6 +29,5 @@ describe 'data-bag-merge::environment' do
       expect(chef_run.node['item_with_normal']).to eq 'normal value'
       expect(chef_run.node['item_with_override']).to eq 'override value'
     end
-
   end
 end
